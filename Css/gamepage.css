@@ -45,3 +45,29 @@ tr {
 .borderAll {
     border: 8px solid #000;
 }
+
+.buttonContainer {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.resetButton {
+    background-color: #FFF;
+    border-radius: 5px;
+    border: 1px solid #000;
+    cursor: pointer;
+    height: 45px;
+    width: 125px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 6px 7px;
+}
+
+.resetButton:hover {
+    background-color: #ed7864;
+}
+
+.resetButton:active {
+    transform: translateY(5px);
+    box-shadow: 4px 7px;
+}
