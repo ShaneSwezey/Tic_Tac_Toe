@@ -6,25 +6,29 @@
         <meta name="description" content="Tic tac toe game against a simple computer AI.">
         <title>Tic-Tac-Toe</title>
         <link rel="stylesheet" href="../Css/gamepage.css">
+        <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
     </head>
     <body>
-        <h1>Tic Tac Toe</h1>
+        <div class="headerContainer">
+            <h1>Tic Tac Toe</h1>
+            <h2>A tic tac toe game against the computer</h2>
+        </div>
         <div class="boardContainer">
             <table cellspacing="0" cellpadding="0">
                 <tr>
-                    <td></td>
-                    <td class="borderLeftRight"></td>
-                    <td></td>
+                    <td id="r0c0"></td>
+                    <td class="borderLeftRight" id="r0c1"></td>
+                    <td id="r0c2"></td>
                 </tr>
                 <tr>
-                    <td class="borderTopBottom"></td>
-                    <td class="borderAll"></td>
-                    <td class="borderTopBottom"></td>
+                    <td class="borderTopBottom" id="r1c0"></td>
+                    <td class="borderAll" id="r1c1"></td>
+                    <td class="borderTopBottom" id="r1c2"></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td class="borderLeftRight"></td>
-                    <td></td>
+                    <td id="r2c0"></td>
+                    <td class="borderLeftRight" id="r2c1"></td>
+                    <td id="r2c2"></td>
                 </tr>
             </table>
         </div>
