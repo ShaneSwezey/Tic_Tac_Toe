@@ -52,7 +52,7 @@ tr {
     text-align: center;
 }
 
-.resetButton {
+.gameButton {
     background-color: #ed7864;
     border-radius: 5px;
     border: 1px solid #000;
@@ -66,11 +66,11 @@ tr {
     color: #FFF;
 }
 
-.resetButton:hover {
+.gameButton:hover {
     background-color: #ed7864;
 }
 
-.resetButton:active {
+.gameButton:active {
     transform: translateY(5px);
     box-shadow: 0px 0px #000;
 }
@@ -80,6 +80,33 @@ tr {
     font-family: 'Black Han Sans', sans-serif;
     text-decoration: underline;
     font-size: 200%;
+}
+
+.setupModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 25%;
+    height: 25%;
+    overflow: auto;
+    background-color: #FFF;
+}
+
+.close {
+    color: #AAAA;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 #youScore {

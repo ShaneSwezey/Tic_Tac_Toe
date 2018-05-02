@@ -4,19 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Shane Swezey">
-        <meta name="description" content="Tic tac toe game against a simple computer AI.">
+        <meta name="description" content="Tic tac toe game against another user or computer">
         <title>Tic-Tac-Toe</title>
         <link rel="stylesheet" href="../Css/gamepage.css">
         <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
     </head>
     <body>
+        <div class="scoreContainer" id="youScore">Player 1</div>
+        <div class="scoreContainer" id="computerScore">Player 2</div>
         <div class="headerContainer">
             <h1>Tic Tac Toe</h1>
-            <h2>A tic tac toe game vs the computer</h2>
+            <h2>A tic tac toe game vs user or computer</h2>
         </div>
-        <div class="scoreContainer" id="youScore">You
+        <div class="setUpModal" id="gameSetUp">
+            <span class="close">&times;</span>
         </div>
-        <div class="scoreContainer" id="computerScore">Computer</div>
         <div class="boardContainer">
             <table cellspacing="0" cellpadding="0">
                 <tr>
@@ -36,8 +38,10 @@
                 </tr>
             </table>
             <div class="buttonContainer">
-                <button class="resetButton">Reset Game</button>
+                <button class="gameButton" id="newGame">New Game</button>
+                <button class="gameButton" id="resetGame">Reset Game</button>
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="../JavaScript/gamescript.js"></script>
 </html>
