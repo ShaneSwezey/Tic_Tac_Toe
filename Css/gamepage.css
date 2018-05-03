@@ -116,6 +116,15 @@ tr {
     border-radius: 5px 5px 0px 0px;
 }
 
+.modalusers {
+    margin: 10px;
+}
+
+input, label {
+    display: block;
+    border-radius: 1px;
+}
+
 .close {
     color: #FFF;
     float: right;
@@ -134,10 +143,12 @@ tr {
     float: left;
     margin-left: 250px;
     margin-right: 95px;
+    color: #FF0000;
 }
 
 #computerScore {
     float: right;
     margin-right: 250px;
     margin-left: 0px;
+    color: #0000CD;
 }
