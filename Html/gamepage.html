@@ -10,8 +10,8 @@
         <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
     </head>
     <body>
-        <div class="scoreContainer" id="youScore">Player 1</div>
-        <div class="scoreContainer" id="computerScore">Player 2</div>
+        <div class="scoreContainer" id="youScore">Red Player</div>
+        <div class="scoreContainer" id="computerScore">Blue Player</div>
         <div class="headerContainer">
             <h1>Tic Tac Toe</h1>
             <h2>A tic tac toe game vs user or computer</h2>
@@ -22,12 +22,23 @@
                     <span class="close">&times;</span>
                     <h2>New Game</h2>
                 </div>
-                <div class="modalUsers">
-                    <label for="p1Name">Player 1 Name:</label>
-                    <input type="text" id="p1Name">
-                    <label for="p2Name">Player 2 Name:</label>
-                    <input type="text" id="p2Name">
+                <div class="gameType">
+                    <h3>Player Vs Player</h3>
                 </div>
+                <hr class="separatorLine">
+                <div class="modalUsers">
+                    <label for="p1Name" id="redPlayer">Red Player Name:</label>
+                    <input type="text" id="p1Name">
+                    <label for="p2Name" id="bluePlayer">Blue Player Name:</label>
+                    <input type="text" id="p2Name">
+                    <button class="gameButton" id="startPlayerGame">Player vs Player</button>
+                </div>
+                <div class="gameType">
+                    <h3>Player Vs Computer</h3>
+                </div>
+                <hr class="separatorLine">
+                <button class="gameButton" id="startComputerGame">Player vs Computer</button>
+                <div class="modalFooter"></div>
             </div>
         </div>
         <div class="boardContainer">

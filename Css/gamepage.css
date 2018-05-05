@@ -62,8 +62,8 @@ tr {
     text-transform: uppercase;
     font-weight: bold;
     box-shadow: 3px 4px #000;
-    font-family: 'Black Han Sans', sans-serif;
     color: #FFF;
+    font-family: 'Black Han Sans', sans-serif;
 }
 
 .gameButton:hover {
@@ -77,7 +77,6 @@ tr {
 
 .scoreContainer {
     color: #FFF;
-    font-family: 'Black Han Sans', sans-serif;
     text-decoration: underline;
     font-size: 200%;
 }
@@ -116,6 +115,14 @@ tr {
     border-radius: 5px 5px 0px 0px;
 }
 
+.modalFooter {
+    background-color: #ed7864;
+    margin: 0px;
+    padding: 2px 16px;
+    border-radius: 5px 5px 0px 0px;
+    height: 70px;
+}
+
 .modalusers {
     margin: 10px;
 }
@@ -139,6 +146,18 @@ input, label {
     cursor: pointer;
 }
 
+.gameType {
+    color: #ed7864;
+    margin-left: 10px;
+}
+
+.separatorLine {
+    height: 2px;
+    background-color: #ed7864;
+    border-color: #ed7864;
+
+}
+
 #youScore {
     float: left;
     margin-left: 250px;
@@ -150,5 +169,21 @@ input, label {
     float: right;
     margin-right: 250px;
     margin-left: 0px;
+    color: #0000CD;
+}
+
+#startPlayerGame {
+    margin-top: 10px;
+}
+
+#startComputerGame {
+    margin: 10px;
+}
+
+#redPlayer {
+    color: #FF0000;
+}
+
+#bluePlayer {
     color: #0000CD;
 }
