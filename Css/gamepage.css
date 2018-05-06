@@ -158,14 +158,14 @@ input, label {
 
 }
 
-#youScore {
+#playerOneScore {
     float: left;
     margin-left: 250px;
     margin-right: 95px;
     color: #FF0000;
 }
 
-#computerScore {
+#playerTwoScore {
     float: right;
     margin-right: 250px;
     margin-left: 0px;

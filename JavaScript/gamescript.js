@@ -4,21 +4,23 @@ const toeBoard = [
     [0,0,0]
 ];
 
-var isWinner = false;
-
-var game = {
+let game = {
     player1: '',
     player2: '',
     winner: '',
     moves: 1
 }
 
-let modal = document.getElementById('gameSetUp');
-let startButton = document.getElementById('newGame');
-let resetButton = document.getElementById('resetGame');
-let modalClose = document.getElementsByClassName('close')[0];
+let isWinner = false;
 
-startButton.onclick = function() {
+const modal = document.getElementById('gameSetUp');
+const newGameButton = document.getElementById('newGame');
+const resetButton = document.getElementById('resetGame');
+const startPlayerGameButton = document.getElementById('startPlayerGame');
+
+const modalClose = document.getElementsByClassName('close')[0];
+
+newGameButton.onclick = function() {
     modal.style.display = "block";
 };
 
@@ -26,16 +28,25 @@ resetButton.onclick = function() {
     alert("This is working!");
 };
 
-modalClose.onclick = function() {
-    modal.style.display = "none";
-};
+modalClose.onclick = closeModalWindow;
 
-function setGameUp() {
-
+startPlayerGameButton.onclick = function() {
+    setPlayerNames();
+    closeModalWindow();
 }
 
+function setPlayerNames() {
+    const playerOneName = document.getElementById('p1Name').value;
+    const playerTwoName = document.getElementById('p2Name').value;
 
+    document.getElementById('playerOneScore').innerText = playerOneName;
+    document.getElementById('playerTwoScore').innerText = playerTwoName;
+}
 
 // minimax algorithm to determine all possible moves in current state of tic tac toe game.
 function minimax(game) {
+}
+
+function closeModalWindow() {
+    modal.style.display = "none";
 }
