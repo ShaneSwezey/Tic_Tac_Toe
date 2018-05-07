@@ -1,52 +1,26 @@
-const toeBoard = [
-    [0,0,0],
-    [0,0,0],
-    [0,0,0]
-];
 
-class TTTGame {
-
-    constructor() {
-        this.player1 = new Player();
-        this.player2 = new Player();
-        this.turn = 1;
-        this.winner = '',
-        this.move = 0;
-    }
-}
-
-class Player {
-
-    constructor() {
-        this.playerName = '';
-    }
-
-    set name(value) {
-        if (value.length === 0) {
-            alert("Name is too short.");
-            return;
-        }
-        this.playerName = value;
-    }
-
-    get name() {
-        return this.playerName;
-    }
-
-    
-}
-
-let currentGame;
-let isWinner = false;
-let gameStarted = false;
+let gameBoard;
 
 const modal = document.getElementById('gameSetUp');
 const newGameButton = document.getElementById('newGame');
 const resetButton = document.getElementById('resetGame');
 const startPlayerGameButton = document.getElementById('startPlayerGame');
 const modalClose = document.getElementsByClassName('close')[0];
+const cells = document.querySelectorAll('.cell');
+const winCond = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [6,4,2]
+];
 
-modalClose.onclick = closeModalWindow;
+const playerOneMarker = 'X';
+const playerTwoMarker = 'O';
+
 
 newGameButton.onclick = function() {
     modal.style.display = "block";
@@ -56,32 +30,51 @@ resetButton.onclick = function() {
     alert(`Game state: ${game.player1Name}`);
 };
 
-// Starts a player vs player game
-startPlayerGameButton.onclick = function() {
-    currentGame = new TTTGame();
-    setPlayerNames();
-    gameStarted = true;
-    closeModalWindow();
+function closeModalWindow() {
+    modal.style.display = "none";
 }
 
 // Sets the players display names
 function setPlayerNames() {
-    currentGame.player1.name(document.getElementById('p1Name').value);
-    currentGame.player2.name(document.getElementById('p2Name').value);
+    const player1Name = document.getElementById('p1Name').value;
+    const player2Name = document.getElementById('p2Name').value;
 
-    document.getElementById('playerOneScore').innerText = currentGame.player1.name();
-    document.getElementById('playerTwoScore').innerText = currentGame.player2.name();
+    document.getElementById('playerOneScore').innerText = player1Name;
+    document.getElementById('playerTwoScore').innerText = player2Name;
 }
 
 // minimax algorithm to determine all possible moves in current state of tic tac toe game.
 function minimax(game) {
 }
 
-function closeModalWindow() {
-    modal.style.display = "none";
+function setUpPlayerGame() {
+    setPlayerNames();
+    gameStarted = true;
+    closeModalWindow();
+    startPlayerGame();
 }
 
-function setTurn() {
-    if (game.turn === 'player1') game.turn = 'player2';
-    else game.turn = 'player1'
+function startPlayerGame() {
+    gameBoard = Array.from(Array(9).keys());
+    for (let i = 0; i < cells.length; i++) {
+        cells[i].innerText = '';
+        cells[i].addEventListener('click', turnClick, false);
+    }
 }
+
+function turnClick(square) {
+    turn(square.target.id, playerOneMarker);
+}
+
+function turn(squareId, player) {
+    console.log(squareId);
+    gameBoard[squareId] = player;
+    document.getElementById(squareId).innerText = player;
+}
+
+// Close modal window
+modalClose.onclick = closeModalWindow;
+
+// Starts a player vs player game
+startPlayerGameButton.onclick = setUpPlayerGame;
+
