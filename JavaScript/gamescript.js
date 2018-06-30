@@ -18,17 +18,22 @@ const winCond = [
     [6,4,2]
 ];
 
-const playerOneMarker = 'X';
-const playerTwoMarker = 'O';
-
+let playersMarker = 'X';
 
 newGameButton.onclick = function() {
     modal.style.display = "block";
 };
 
 resetButton.onclick = function() {
-    alert(`Game state: ${game.player1Name}`);
+    resetGame();
 };
+
+function resetGame() {
+    for (let i = 0; i < cells.length; i++) {
+        cells[i].innerText = '';
+        cells[i].addEventListener('click', turnClick, false);
+    }
+}
 
 function closeModalWindow() {
     modal.style.display = "none";
@@ -56,20 +61,26 @@ function setUpPlayerGame() {
 
 function startPlayerGame() {
     gameBoard = Array.from(Array(9).keys());
-    for (let i = 0; i < cells.length; i++) {
-        cells[i].innerText = '';
-        cells[i].addEventListener('click', turnClick, false);
-    }
+    resetGame();
 }
 
 function turnClick(square) {
-    turn(square.target.id, playerOneMarker);
+    turn(square.target.id, playersMarker);
 }
 
-function turn(squareId, player) {
+function turn(squareId, playerMarker) {
     console.log(squareId);
-    gameBoard[squareId] = player;
-    document.getElementById(squareId).innerText = player;
+    gameBoard[squareId] = playerMarker;
+    document.getElementById(squareId).innerText = playerMarker;
+    if (playerMarker === 'X') {
+        playersMarker = 'O';
+    } else {
+        playersMarker = 'X';
+    }
+}
+
+function isWinner() {
+    
 }
 
 // Close modal window
