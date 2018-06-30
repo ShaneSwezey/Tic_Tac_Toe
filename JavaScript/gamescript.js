@@ -69,13 +69,15 @@ function turnClick(square) {
 }
 
 function turn(squareId, playerMarker) {
-    console.log(squareId);
-    gameBoard[squareId] = playerMarker;
-    document.getElementById(squareId).innerText = playerMarker;
-    if (playerMarker === 'X') {
-        playersMarker = 'O';
-    } else {
-        playersMarker = 'X';
+    if (cells[squareId].innerText === '') {
+        console.log(squareId);
+        gameBoard[squareId] = playerMarker;
+        document.getElementById(squareId).innerText = playerMarker;
+        if (playerMarker === 'X') {
+            playersMarker = 'O';
+        } else {
+            playersMarker = 'X';
+        }
     }
 }
 
